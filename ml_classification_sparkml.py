@@ -55,3 +55,17 @@ evaluator = MulticlassClassificationEvaluator(labelCol='label', predictionCol='p
 accuracy = evaluator.evaluate(predictions)
 print("Accuracy =", accuracy)
 
+# precision
+evaluator = MulticlassClassificationEvaluator(labelCol="label", predictionCol="prediction",metricName="weightedPrecision")
+precision = evaluator.evaluate(predictions)
+print("Precision =", precision)
+
+# recall
+evaluator = MulticlassClassificationEvaluator(labelCol="label", predictionCol="prediction",metricName="weightedRecall")
+recall = evaluator.evaluate(predictions)
+print("Recall =", recall)
+
+# F1 score
+evaluator = MulticlassClassificationEvaluator(labelCol="label",predictionCol="prediction",metricName="f1")
+f1 = evaluator.evaluate(predictions)
+print('F1 score =', f1)
